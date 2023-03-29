@@ -1,0 +1,3 @@
+# MyGlobals
+x = 0
+
