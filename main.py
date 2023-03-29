@@ -1,4 +1,8 @@
-# This is a sample Python script.
+# *****************************************************************************
+# *** Gestra V2                                                             ***
+# *** V 0.1                                                                 ***
+# *****************************************************************************
+
 import time
 from machine import Pin, Timer          # importing pin, and timer class
 
