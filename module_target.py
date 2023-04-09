@@ -1,10 +1,9 @@
 # #############################################################################
-# ### Radar Beams
 # ### Targets
 # ### V 0.10
 # #############################################################################
 
-class Radar_Beam:
+class Target:
 
     def __init__(self, num_pix):
         self.num_pix = num_pix
@@ -26,7 +25,7 @@ class Radar_Beam:
 
 def main():
     print("Start Global Init")
-    mg = Radar_Beam(35)
+    mg = Target(35)
     print(mg.position)
     print(mg.get_position())
 
