@@ -11,10 +11,12 @@ class Global_Module:
 
 
 class Global_WS2812:
-    numpix_1 = 12  # Anzahl LEDs im 1. Stripe
-    numpix_2 = 12  # Anzahl LEDs im 2. Stripe
-    numpix_3 = 12  # Anzahl LEDs im 3. Stripe
-    numpix_4 = 16  # Anzahl LEDs im 4. Stripe
+
+    def __init__(self):
+        self.radar_beam_1 = 12
+        self.radar_beam_2 = 12
+        self.radar_beam_3 = 12
+        self.radar_beam_4 = 12
 
     seg_01_strip = 0  # 1. Ledsegment -> Stripe
     seg_01_start = 0  # 1. Ledsegment -> Start

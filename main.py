@@ -7,9 +7,16 @@
 import time
 from machine import Pin, Timer          # importing pin, and timer class
 
+import module_init
+
+
 led = Pin(25, Pin.OUT)                   # GPIO14 as led output
 
 led.value(False)                         # LED is off
+
+mg = module_init.Global_WS2812()
+
+x = mg.radar_beam_1
 
 
 def timer_init_1(period_ms):        # Timer next Step Radar-Beams
