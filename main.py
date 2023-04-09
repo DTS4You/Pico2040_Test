@@ -14,7 +14,7 @@ led = Pin(25, Pin.OUT)                   # GPIO14 as led output
 
 led.value(False)                         # LED is off
 
-mg = module_init.Global_WS2812()
+mg = module_radar
 
 x = mg.radar_beam_1
 
