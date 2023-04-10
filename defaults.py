@@ -20,6 +20,11 @@ class Colors:
     radar_send      = [ 10, 20, 30]
     radar_receive   = [ 10, 20, 30]
 
+
+class Values:
+    loop_time       = 0.3
+
+
 # -----------------------------------------------------------------------------
 def main_task():
     print(Tracks.num_of_tracks)

@@ -6,8 +6,7 @@
 
 import time
 import defaults
-
-x = defaults.Tracks.age
+import module_radar
 
 
 # -----------------------------------------------------------------------------
@@ -15,11 +14,13 @@ def main_loop():
 
     print("Main Loop")
 
+    rb_1 = module_radar.Radar_Beam(defaults.Radar.num_of_leds)
+
     try:
         while True:
-            print("Wait_Loop")
-            print(x)
-            time.sleep(1.0)
+            print("Do_Loop")
+            print(rb_1)
+            time.sleep(defaults.Values.loop_time)
     except KeyboardInterrupt:
         print("Main loop ended!")
 
