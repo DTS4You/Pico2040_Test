@@ -1,3 +1,0 @@
-# MyGlobals
-x = 1
-

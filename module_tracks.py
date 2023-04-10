@@ -8,9 +8,6 @@ class Track_Seg:
     def __init__(self, num_pix):
         self.num_pix = num_pix
         self.position = 0
-        self.hit_flag = False
-        self.start_flag = True
-        self.end_flag = False
         self.direction = False
 
     def next_position(self):
@@ -25,7 +22,7 @@ class Track_Seg:
 
 def main():
     print("Start Global Init")
-    mg = Radar_Beam(35)
+    mg = Track_Seg(20)
     print(mg.position)
     print(mg.get_position())
 
