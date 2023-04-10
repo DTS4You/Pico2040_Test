@@ -3,8 +3,7 @@
 # ### V 0.10
 # #############################################################################
 
-class Track_Seg\
-:
+class Track_Seg:
 
     def __init__(self, num_pix):
         self.num_pix = num_pix
