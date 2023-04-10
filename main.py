@@ -5,9 +5,10 @@
 # *****************************************************************************
 
 import time
-import module_globals
+import defaults
 
-x = module_globals.Global.age
+x = defaults.Tracks.age
+
 
 # -----------------------------------------------------------------------------
 def main_loop():
@@ -17,6 +18,7 @@ def main_loop():
     try:
         while True:
             print("Wait_Loop")
+            print(x)
             time.sleep(1.0)
     except KeyboardInterrupt:
         print("Main loop ended!")
