@@ -3,6 +3,9 @@
 # ### V 0.10
 # #############################################################################
 
+import defaults
+
+
 class Radar_Beam:
 
     def __init__(self, num_pix):
@@ -25,9 +28,8 @@ class Radar_Beam:
 
 def main():
     print("Start Global Init")
-    mg = Radar_Beam(35)
-    print(mg.position)
-    print(mg.get_position())
+    rb_1 = Radar_Beam(defaults.Radar.num_of_leds)
+    print(rb_1.get_position())
 
 
 # ------------------------------------------------------------------------------
