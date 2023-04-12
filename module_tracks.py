@@ -24,7 +24,7 @@ class Track_Seg:
 
 def main():
     print("Start Global Init")
-    mg = Track_Seg(20,10)
+    mg = Track_Seg(20, 10)
     print(mg.direction)
     print(mg.get_direction())
 
