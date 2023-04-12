@@ -3,19 +3,19 @@
 # ### V 0.10
 # #############################################################################
 
+# Bahnen der Schmutzteile
 class Track_Seg:
+    """Bahnen der Schmutzteile \n
+    Direction = False -> Links nach Rechts \n
+    Direction = True  -> Rechts nach Links."""
 
     def __init__(self, num_pix):
+        """Anzahl der LEDs"""
         self.num_pix = num_pix
-        self.position = 0
         self.direction = False
 
-    def next_position(self):
-        if self.position > 0:
-            self.start_flag = False
-
-    def get_position(self):
-        return self.position
+    def get_direction(self):
+        return self.direction
 
 
 # -----------------------------------------------------------------------------
@@ -23,8 +23,8 @@ class Track_Seg:
 def main():
     print("Start Global Init")
     mg = Track_Seg(20)
-    print(mg.position)
-    print(mg.get_position())
+    print(mg.direction)
+    print(mg.get_direction())
 
 
 # ------------------------------------------------------------------------------
@@ -35,6 +35,3 @@ if __name__ == "__main__":
     main()
 
 # =============================================================================
-
-# Radar Strahlen von Position 0 bis "end_flag"
-# Bei Treffer mit Target -> Farbe auf Rot und zurück zur Position 0
