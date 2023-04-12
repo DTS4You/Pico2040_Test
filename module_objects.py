@@ -2,10 +2,30 @@
 # ### Objets
 # ### V 0.10
 # #############################################################################
+import time
+
 import defaults
 import module_radar
 import module_target
 import module_tracks
+import random
+
+
+class State_Machine():
+
+    def __init__(self, wait_cycles=2):
+        self.wait_cycles        = wait_cycles
+        self.wait_counter       = 0
+        self.new_flag           = True
+        self.max_target_flag    = False
+
+    def next_step(self):
+        if self.wait_counter < self.wait_cycles:
+            self.wait_counter += 1
+        else:
+            self.wait_counter = 0
+            self.new_flag = False
+            self.wait_cycles = random.randint(defaults.Values.wait_cycle_min, defaults.Values.wait_cycle_max)
 
 
 def generate_radar_beams():
@@ -29,15 +49,37 @@ def generate_tracks():
     return my_tracks
 
 
+def generate_objects():
+    global state_logic, tracks, targets, radar_beams
+    tracks = generate_tracks()
+    targets = generate_targets()
+    radar_beams = generate_radar_beams()
+    state_logic = State_Machine()
+
+
+def check_max_targets():
+    num_of_activ_targets = 0
+    for i in range(len(targets)):
+        if targets[i].activ_flag:
+            num_of_activ_targets += 1
+    if num_of_activ_targets == len(targets):
+        state_logic.max_target_flag = False
+    else:
+        state_logic.max_target_flag = True
+
+
 # -----------------------------------------------------------------------------
 
 def main():
     print("Start Objects")
-    my_tracks = generate_tracks()
-    print(my_tracks[23].num_pix)
-    print(len(my_tracks))
-    my_targets = generate_targets()
-    print(len(my_targets))
+    generate_objects()
+    i = 0
+    while i < 50:
+        check_max_targets()
+        state_logic.next_step()
+        #print(state_logic.wait_cycles)
+        i += 1
+        time.sleep(0.3)
 
 
 # ------------------------------------------------------------------------------
