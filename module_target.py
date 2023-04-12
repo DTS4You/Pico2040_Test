@@ -5,17 +5,18 @@
 
 class Target:
 
-    def __init__(self, num_pix):
-        self.num_pix = num_pix
+    def __init__(self):
+        """Schrottteile \n
+        Position -> Links nach Rechts \n
+        Track_num -> Bahn-Nummer"""
         self.position = 0
-        self.hit_flag = False
-        self.start_flag = True
+        self.track_num = 0
+        self.activ_flag = False
         self.end_flag = False
-        self.direction = False
 
     def next_position(self):
         if self.position > 0:
-            self.start_flag = False
+            self.activ_flag = True
 
     def get_position(self):
         return self.position
@@ -25,7 +26,7 @@ class Target:
 
 def main():
     print("Start Global Init")
-    mg = Target(35)
+    mg = Target()
     print(mg.position)
     print(mg.get_position())
 

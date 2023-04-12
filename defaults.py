@@ -3,7 +3,8 @@
 ###############################################################################
 
 class Radar:
-    num_of_leds = 78
+    num_of_beams    = 4
+    num_of_leds     = 78
 
 
 class Target:
@@ -13,8 +14,8 @@ class Target:
 class Tracks:
     num_of_tracks   = 24
     num_of_leds     = 78
-    track_1_hit     = 20
-    track_2_hit     = 20
+    #                   1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24
+    track_hit_y     = [20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20, 20]
 
 
 class Colors:
