@@ -5,12 +5,12 @@
 
 # Bahnen der Schmutzteile
 class Track_Seg:
-    """Bahnen der Schmutzteile \n
-    Direction = False -> Links nach Rechts \n
-    Direction = True  -> Rechts nach Links."""
 
     def __init__(self, num_pix, hit_rb_y):
-        """Anzahl der LEDs \n
+        """Bahnen der Schmutzteile \n
+        Direction = False -> Links nach Rechts \n
+        Direction = True  -> Rechts nach Links \n
+        Anzahl der LEDs \n
         Höhe der Kollision mit dem Radarstrahl"""
         self.num_pix = num_pix
         self.hit_rb_y = hit_rb_y
