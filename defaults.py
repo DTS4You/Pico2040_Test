@@ -11,8 +11,10 @@ class Target:
 
 
 class Tracks:
-    num_of_tracks = 24
-    num_of_leds = 78
+    num_of_tracks   = 24
+    num_of_leds     = 78
+    track_1_hit     = 20
+    track_2_hit     = 20
 
 
 class Colors:
