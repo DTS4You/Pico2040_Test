@@ -2,6 +2,7 @@
 # ### Radar Beams
 # ### V 0.10
 # #############################################################################
+import time
 
 import defaults
 
@@ -17,19 +18,48 @@ class Radar_Beam:
         self.direction = False
 
     def next_position(self):
-        if self.position > 0:
-            self.start_flag = False
+        if not self.end_flag:
+            if not self.direction:      # False = unten nach oben / True = oben nach unten
+                self.position += 1
+                if self.position >= self.num_pix:
+                    self.end_flag = True
+            else:
+                self.position -= 1
+                if self.position < 1:
+                    self.end_flag = True
 
     def get_position(self):
         return self.position
 
+    def get_end_flag(self):
+        return self.end_flag
+
+    def get_direction(self):
+        return self.direction
+
+    def set_hit(self):
+        self.direction = True
+        self.hit_flag = True
+
+    def set_new(self):
+        self.position = 0
+        self.end_flag = False
+        self.direction = False
+        self.hit_flag = False
 
 # -----------------------------------------------------------------------------
 
 def main():
     print("Start Global Init")
     rb_1 = Radar_Beam(defaults.Radar.num_of_leds)
-    print(rb_1.get_position())
+    # print(rb_1.get_position())
+    i = 0
+    while i < 200:
+        if not rb_1.get_end_flag():
+            print(rb_1.get_position())
+        rb_1.next_position()
+        i += 1
+        time.sleep(0.02)
 
 
 # ------------------------------------------------------------------------------
