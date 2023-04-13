@@ -47,6 +47,7 @@ class Radar_Beam:
         self.direction = False
         self.hit_flag = False
 
+
 # -----------------------------------------------------------------------------
 
 def main():
