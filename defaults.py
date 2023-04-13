@@ -5,6 +5,7 @@
 class Radar:
     num_of_beams    = 4
     num_of_leds     = 78
+    target_hit_pos  = 60                # Trefferposition von Links nach Rechts in LEDs
 
 
 class Target:

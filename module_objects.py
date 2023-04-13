@@ -28,6 +28,17 @@ class State_Machine():
             self.wait_cycles = random.randint(defaults.Values.wait_cycle_min, defaults.Values.wait_cycle_max)
 
 
+def check_max_targets():
+    num_of_activ_targets = 0
+    for i in range(len(targets)):
+        if targets[i].activ_flag:
+            num_of_activ_targets += 1
+    if num_of_activ_targets == len(targets):
+        state_logic.max_target_flag = True
+    else:
+        state_logic.max_target_flag = False
+
+
 def generate_radar_beams():
     my_radar_beams = []
     for i in range(defaults.Radar.num_of_beams):
@@ -56,16 +67,6 @@ def generate_objects():
     radar_beams = generate_radar_beams()
     state_logic = State_Machine()
 
-
-def check_max_targets():
-    num_of_activ_targets = 0
-    for i in range(len(targets)):
-        if targets[i].activ_flag:
-            num_of_activ_targets += 1
-    if num_of_activ_targets == len(targets):
-        state_logic.max_target_flag = False
-    else:
-        state_logic.max_target_flag = True
 
 
 # -----------------------------------------------------------------------------
