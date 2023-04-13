@@ -55,8 +55,11 @@ def main():
     # print(rb_1.get_position())
     i = 0
     while i < 200:
-        if not rb_1.get_end_flag():
-            print(rb_1.get_position())
+        print(rb_1.get_position())
+        if rb_1.get_position() == 25:
+            rb_1.set_hit()
+        if rb_1.get_end_flag():
+            print("End_Flag")
         rb_1.next_position()
         i += 1
         time.sleep(0.02)

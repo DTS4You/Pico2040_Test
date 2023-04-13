@@ -20,6 +20,9 @@ class State_Machine():
         self.max_target_flag    = False
 
     def next_step(self):
+        pass
+
+    def next_target(self):
         if self.wait_counter < self.wait_cycles:
             self.wait_counter += 1
         else:
@@ -68,7 +71,6 @@ def generate_objects():
     state_logic = State_Machine()
 
 
-
 # -----------------------------------------------------------------------------
 
 def main():
@@ -77,8 +79,8 @@ def main():
     i = 0
     while i < 50:
         check_max_targets()
-        state_logic.next_step()
-        #print(state_logic.wait_cycles)
+        state_logic.next_target()
+        print(state_logic.wait_cycles)
         i += 1
         time.sleep(0.3)
 
