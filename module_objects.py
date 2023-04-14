@@ -14,10 +14,11 @@ import random
 class State_Machine():
 
     def __init__(self, wait_cycles=2):
-        self.wait_cycles        = wait_cycles
-        self.wait_counter       = 0
+        self.wait_cycles        = wait_cycles               # Wartezyklen bis ein neues Schrottteil erzeugt wird
+        self.wait_counter       = 0                         # Zähler für Wartezyklen
         self.new_flag           = True
-        self.max_target_flag    = False
+        self.max_target_flag    = False                     # Maximale Anzahl der Schrottteile erreicht
+        self.radar_end_flag     = False                     # Alle Radar-Strahlen sind am Ende
 
     def next_step(self):
         pass
@@ -29,6 +30,11 @@ class State_Machine():
             self.wait_counter = 0
             self.new_flag = False
             self.wait_cycles = random.randint(defaults.Values.wait_cycle_min, defaults.Values.wait_cycle_max)
+
+    def check_radar_end(self):
+        for i in range(len(radar_beams)):
+            self.radar_end_flag = self.radar_end_flag or radar_beams[i].get_end_flag()
+        return self.radar_end_flag
 
 
 def check_max_targets():
