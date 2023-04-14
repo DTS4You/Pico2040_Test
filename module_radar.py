@@ -27,6 +27,7 @@ class Radar_Beam:
                 self.position -= 1
                 if self.position < 1:
                     self.end_flag = True
+        return self.end_flag
 
     def get_position(self):
         return self.position

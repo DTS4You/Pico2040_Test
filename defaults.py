@@ -4,7 +4,8 @@
 
 class Radar:
     num_of_beams    = 4
-    num_of_leds     = 78
+    # num_of_leds     = 78              # LEDs in Senderichtung
+    num_of_leds     = 12                # LEDs in Senderichtung === Debug ===
     target_hit_pos  = 60                # Trefferposition von Links nach Rechts in LEDs gerechnet
 
 

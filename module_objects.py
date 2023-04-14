@@ -21,7 +21,13 @@ class State_Machine():
         self.radar_end_flag     = False                     # Alle Radar-Strahlen sind am Ende
 
     def next_step(self):
-        pass
+        if self.check_radar_end():
+            print("New Radar sequence")
+        else:
+            print("Next Radar position")
+            for i in range(len(radar_beams)):
+                radar_beams[i].next_position()
+                print(radar_beams[i].get_position())
 
     def next_target(self):
         if self.wait_counter < self.wait_cycles:
@@ -84,10 +90,9 @@ def main():
     generate_objects()
     i = 0
     while i < 50:
-        check_max_targets()
-        state_logic.next_target()
-        print(state_logic.check_radar_end())
-        print(state_logic.wait_cycles)
+        state_logic.next_step()
+        #print(state_logic.check_radar_end())
+        #print(state_logic.wait_cycles)
         i += 1
         time.sleep(0.3)
 
