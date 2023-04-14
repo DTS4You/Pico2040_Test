@@ -86,6 +86,7 @@ def main():
     while i < 50:
         check_max_targets()
         state_logic.next_target()
+        print(state_logic.check_radar_end())
         print(state_logic.wait_cycles)
         i += 1
         time.sleep(0.3)
