@@ -23,11 +23,23 @@ class State_Machine():
     def next_step(self):
         if self.check_radar_end():
             print("New Radar sequence")
+            self.next_target_pos()
+            self.reset_radar_pos()
+
         else:
             print("Next Radar position")
             for i in range(len(radar_beams)):
                 radar_beams[i].next_position()
-                print(radar_beams[i].get_position())
+                print("Radar_Pos: ", radar_beams[i].get_position())
+
+    def reset_radar_pos(self):
+        for i in range(len(radar_beams)):
+            radar_beams[i].set_new()
+        self.new_flag = True
+        return self.new_flag
+
+    def next_target_pos(self):
+        pass
 
     def next_target(self):
         if self.wait_counter < self.wait_cycles:
