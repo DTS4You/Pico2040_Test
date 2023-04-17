@@ -17,6 +17,7 @@ class State_Machine():
         self.wait_cycles        = wait_cycles               # Wartezyklen bis ein neues Schrottteil erzeugt wird
         self.wait_counter       = 0                         # Zähler für Wartezyklen
         self.new_flag           = True
+        self.step_target_flag   = False                     # Nächtste Target Position
         self.max_target_flag    = False                     # Maximale Anzahl der Schrottteile erreicht
         self.radar_end_flag     = False                     # Alle Radar-Strahlen sind am Ende
 
@@ -35,11 +36,14 @@ class State_Machine():
     def reset_radar_pos(self):
         for i in range(len(radar_beams)):
             radar_beams[i].set_new()
+        self.radar_end_flag = False
         self.new_flag = True
         return self.new_flag
 
     def next_target_pos(self):
-        pass
+        for i in range(len(targets)):
+            print("Target_Pos: ", targets[i].get_position())
+        self.step_target_flag = True
 
     def next_target(self):
         if self.wait_counter < self.wait_cycles:
