@@ -28,10 +28,18 @@ class Logic:
         return self.output_flag
 
 
+array = [0, 1, 2, 3]
+
+
 # -----------------------------------------------------------------------------
 def main_loop():
 
     print("Main Loop")
+
+    print(array)
+
+    new_array = array[::-1]
+    print(new_array)
 
     i = 0
 
@@ -43,8 +51,8 @@ def main_loop():
         else:
             logic.clear_state(0)
         # print(logic.input_state[0], logic.input_state[1], logic.input_state[2], logic.input_state[3])
-        print(logic.input_state)
-        print(logic.check_state_or())
+        #print(logic.input_state)
+        #print(logic.check_state_or())
         time.sleep(loop_time)
         i += 1
 
