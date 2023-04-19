@@ -23,6 +23,7 @@ class Target:
 class Tracks:
     num_of_tracks   = 24
     num_of_leds     = 78
+    ws2812_pio      =
     # Direction -> True = Rechts nach Links -> False = Links nach Rechts
     direction       = [ True,       # 1
                         False,      # 2
