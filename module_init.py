@@ -12,12 +12,14 @@ class Global_Module:
 
 class Global_WS2812:
 
-    numpix_1            = 12            # Anzahl LEDs im 1. Stripe
-    numpix_2            = 12            # Anzahl LEDs im 2. Stripe
-    numpix_3            = 12            # Anzahl LEDs im 3. Stripe
-    numpix_4            = 12            # Anzahl LEDs im 4. Stripe
-    numpix_5            = 12            # Anzahl LEDs im 5. Stripe
-    numpix_6            = 12            # Anzahl LEDs im 6. Stripe
+    numpix_1            = 256            # Anzahl LEDs im 1. Stripe
+    numpix_2            = 256            # Anzahl LEDs im 2. Stripe
+    numpix_3            = 256            # Anzahl LEDs im 3. Stripe
+    numpix_4            = 256            # Anzahl LEDs im 4. Stripe
+    numpix_5            = 256            # Anzahl LEDs im 5. Stripe
+    numpix_6            = 256            # Anzahl LEDs im 6. Stripe
+    numpix_7            = 256            # Anzahl LEDs im 7. Stripe
+    numpix_8            = 256            # Anzahl LEDs im 8. Stripe
 
     seg_01_strip        = 0             #  1. Ledsegment -> Stripe      # 1. LED hinterer Teil
     seg_01_start        = 0             #  1. Ledsegment -> Start
